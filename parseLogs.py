@@ -13,20 +13,6 @@ for logfile in os.listdir("logs"):
             pline = line.rstrip()
             if pline.startswith("Random Seed:"):
                 seedString = pline.replace("Random Seed: ","")
-            '''
-            if pline.startswith("--Pokemon Movesets--"):
-                startParse = "Y"
-                endParse = "N"
-                continue
-            if startParse == "Y" and "->" in pline:
-                pokemon = pline.replace(" ","").split("->")
-                pokeevo = ",".join(pokemon)
-                print(seedString.rstrip() + "," + pokeevo.rstrip())
-            if pline.startswith("--TM Moves--"):
-                startParse = "N"
-                endParse = "Y"
-                break
-            '''
             if pline.startswith("--Randomized Evolutions--"):
                 startParse = True
                 continue
