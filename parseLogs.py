@@ -17,10 +17,207 @@ for logfile in os.listdir("logs"):
                 startParse = True
                 continue
             if startParse and pline != "":
+                '''
                 pokemon = pline.split(" and ",1)
                 pokemon = pokemon[0].replace(" ","").split("->")
-                pokeevo = ",".join(pokemon)
-                print(seedString.rstrip() + "," + pokeevo.rstrip())
+                '''
+                pokemon = pline.replace("  ","").split("->")
+                if pline.startswith("--Pokemon Base Stats & Types--"):
+                    startParse = False
+                    break
+                elif pline.startswith("Pikachuc") or pline.startswith("Pikachup"):
+                    # Required here to prevent these clashing with standard Pikachu
+                    pokeevo = ",".join(pokemon)
+                    print(seedString.rstrip() + "," + pokeevo.rstrip())
+                elif pline.startswith("Pikachu"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Pikachu(Raichu)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Pikachu(RaichuA)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Gloom"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Gloom(Vileplume)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Gloom(Bellossom)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Poliwhirl"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Poliwhirl(Poliwrath)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Poliwhirl(Politoed)," + pokeSplit[1].rstrip())
+                elif pline.startswith("Slowpokeg"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Slowpoke(SlowbroG)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Slowpoke(SlowkingG)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Slowpoke"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Slowpoke(Slowbro)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Slowpoke(Slowking)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Exeggcute"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Exeggcute(Exeggutor)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Exeggcute(ExeggutorA)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Koffing"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Koffing(Weezing)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Koffing(WeezingG)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Scyther"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Scyther(Scizor)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Scyther(Kleavor)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Eeveep"):
+                    # Required here to prevent this clashing with standard Eevee
+                    pokeevo = ",".join(pokemon)
+                    print(seedString.rstrip() + "," + pokeevo.rstrip())
+                elif pline.startswith("Eevee"):
+                    eevos = pokemon[1].split(",")
+                    print(seedString.rstrip() + ",Eevee(Jolteon)," + eevos[0].rstrip())
+                    print(seedString.rstrip() + ",Eevee(Vaporeon)," + eevos[1].rstrip())
+                    print(seedString.rstrip() + ",Eevee(Flareon)," + eevos[2].rstrip())
+                    print(seedString.rstrip() + ",Eevee(Espeon)," + eevos[3].rstrip())
+                    print(seedString.rstrip() + ",Eevee(Umbreon)," + eevos[4].rstrip())
+                    print(seedString.rstrip() + ",Eevee(Leafeon)," + eevos[5].rstrip())
+                    eevGlace = eevos[6].split("and")
+                    print(seedString.rstrip() + ",Eevee(Glaceon)," + eevGlace[0].rstrip())
+                    print(seedString.rstrip() + ",Eevee(Sylveon)," + eevGlace[1].rstrip())
+                elif pline.startswith("Quilava"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Quilava(Typhlosion)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Quilava(TyphlosionH)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Tyrogue"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Tyrogue(Hitmonchan)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Tyrogue(Hitmonlee)," + pokeSplit[1].rstrip())
+                    print(seedString.rstrip() + ",Tyrogue(Hitmontop)," + pokeSplit[2].rstrip())
+                    
+                elif pline.startswith("Wurmple"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Wurmple(Silcoon)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Wurmple(Cascoon)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Kirlia"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Kirlia(Gardevoir)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Kirlia(Gallade)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Nincada"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Nincada(Ninjask)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Nincada(Shedinja)," + pokeSplit[1].rstrip())
+                elif pline.startswith("Snorunt"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Snorunt(Glalie)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Snorunt(Froslass)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Clamperl"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Clamperl(Huntail)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Clamperl(Gorebyss)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Burmys"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Burmys(Mothim)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Burmys(WormadanS)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Burmyt"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Burmyt(Mothim)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Burmyt(WormadanT)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Burmy"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Burmy(Mothim)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Burmy(Wormadan)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Mime Jr"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Mime Jr(Mr. Mime)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Mime Jr(Mr. MimeG)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Dewott"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Dewott(Samurott)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Dewott(SamurottG)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Petilil"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Petilil(Lilligant)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Petilil(LilligantH)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Espurr"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Espurr(Meowstic)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Espurr(MeowsticF)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Doublade"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Doublade(Aegislash)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Doublade(AegislashB)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Goomy"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Goomy(Sliggoo)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Goomy(SliggooH)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Bergmite"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Bergmite(Avalugg)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Bergmite(AvaluggH)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Dartrix"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Dartrix(Decidueye)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Dartrix(DecidueyeH)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Rockruff"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Rockruff(LycanrocM)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Rockruff(Lycanroc)," + pokeSplit[1].rstrip())
+                    print(seedString.rstrip() + ",Rockruff(LycanrocD)," + pokeSplit[2].rstrip())
+                    
+                elif pline.startswith("Cosmoem"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Cosmoem(Solgaleo)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Cosmoem(Lunala)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Applin"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Applin(Appletun)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Applin(Flapple)," + pokeSplit[1].rstrip())
+                    print(seedString.rstrip() + ",Applin(Dipplin)," + pokeSplit[2].rstrip())
+                    
+                elif pline.startswith("Toxel"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Toxel(Toxtricity)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Toxel(ToxtricityL)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Kubfu"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Kubfu(UrshifuR)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Kubfu(Urshifu)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Lechonk"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Lechonk(Oinkologne)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Lechonk(OinkologneF)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Charcadet"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Charcadet(Ceruledge)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Charcadet(Armarouge)," + pokeSplit[1].rstrip())
+                    
+                elif pline.startswith("Basculinw"):
+                    pokeSplit = pokemon[1].replace(" ","").split("and")
+                    print(seedString.rstrip() + ",Basculinw(Basculegion)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Basculinw(BasculegionF)," + pokeSplit[1].rstrip())
+                    
+                else:
+                    pokeevo = ",".join(pokemon)
+                    print(seedString.rstrip() + "," + pokeevo.rstrip())
             
             if pline.startswith("--Pokemon Base Stats & Types--"):
                 startParse = False
