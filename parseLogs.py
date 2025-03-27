@@ -90,9 +90,9 @@ for logfile in os.listdir("logs"):
                     
                 elif pline.startswith("Tyrogue"):
                     pokeSplit = pokemon[1].replace(" ","").split("and")
-                    print(seedString.rstrip() + ",Tyrogue(Hitmonchan)," + pokeSplit[0].rstrip())
-                    print(seedString.rstrip() + ",Tyrogue(Hitmonlee)," + pokeSplit[1].rstrip())
-                    print(seedString.rstrip() + ",Tyrogue(Hitmontop)," + pokeSplit[2].rstrip())
+                    print(seedString.rstrip() + ",Tyrogue(Hitmonchan)," + pokemon[0].rstrip())
+                    print(seedString.rstrip() + ",Tyrogue(Hitmonlee)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Tyrogue(Hitmontop)," + pokeSplit[1].rstrip())
                     
                 elif pline.startswith("Wurmple"):
                     pokeSplit = pokemon[1].replace(" ","").split("and")
@@ -175,9 +175,9 @@ for logfile in os.listdir("logs"):
                     
                 elif pline.startswith("Rockruff"):
                     pokeSplit = pokemon[1].replace(" ","").split("and")
-                    print(seedString.rstrip() + ",Rockruff(LycanrocM)," + pokeSplit[0].rstrip())
-                    print(seedString.rstrip() + ",Rockruff(Lycanroc)," + pokeSplit[1].rstrip())
-                    print(seedString.rstrip() + ",Rockruff(LycanrocD)," + pokeSplit[2].rstrip())
+                    print(seedString.rstrip() + ",Rockruff(LycanrocM)," + pokemon[0].rstrip())
+                    print(seedString.rstrip() + ",Rockruff(Lycanroc)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Rockruff(LycanrocD)," + pokeSplit[1].rstrip())
                     
                 elif pline.startswith("Cosmoem"):
                     pokeSplit = pokemon[1].replace(" ","").split("and")
@@ -186,9 +186,9 @@ for logfile in os.listdir("logs"):
                     
                 elif pline.startswith("Applin"):
                     pokeSplit = pokemon[1].replace(" ","").split("and")
-                    print(seedString.rstrip() + ",Applin(Appletun)," + pokeSplit[0].rstrip())
-                    print(seedString.rstrip() + ",Applin(Flapple)," + pokeSplit[1].rstrip())
-                    print(seedString.rstrip() + ",Applin(Dipplin)," + pokeSplit[2].rstrip())
+                    print(seedString.rstrip() + ",Applin(Appletun)," + pokemon[0].rstrip())
+                    print(seedString.rstrip() + ",Applin(Flapple)," + pokeSplit[0].rstrip())
+                    print(seedString.rstrip() + ",Applin(Dipplin)," + pokeSplit[1].rstrip())
                     
                 elif pline.startswith("Toxel"):
                     pokeSplit = pokemon[1].replace(" ","").split("and")
